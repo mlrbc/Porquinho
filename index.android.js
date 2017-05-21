@@ -1,9 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   AppRegistry,
@@ -13,6 +7,7 @@ import {
   TouchableOpacity,
   TextInput,
   KeyboardAvoidingView,
+  Image,
 } from 'react-native';
 
 export default class Porquin extends Component {
@@ -26,13 +21,21 @@ export default class Porquin extends Component {
           <View style={styles.headerTextBox}>
             <Text style={styles.headerText}>Registro de Compras</Text>
           </View>
+          {/*Ainda nao tem as ações dos botoes de menus.*/}
           <View style={styles.subBarra}>
+            <TouchableOpacity style={styles.subBotoes}>
             <Text style={styles.subBotoesText}>INSERIR</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.subBotoes}>
             <Text style={styles.subBotoesText}>RETIRAR</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.subBotoes}>
             <Text style={styles.subBotoesText}></Text>
+            </TouchableOpacity>
           </View>
         </View>
 
+        {/*Centro da tela, CPF,Valor e botão registrar*/}
         <View style={styles.centroContainer}>
           <Text style={styles.labelcpf}>Digite o CPF do comprador:</Text>
           <View style={styles.barrainput1}>
@@ -56,8 +59,21 @@ export default class Porquin extends Component {
           <Text style={{fontSize:16,color:'white',top: 2, fontFamily:'System'}}>REGISTRAR</Text>
         </TouchableOpacity>
 
+
+
         <View style={styles.footer}>
-          <Text style={{fontSize: 30}}> Aqui será a barra de icones </Text>
+          <TouchableOpacity style={styles.icones}>
+          <Image style={{width:92,height:52}} resizeMode='stretch' source={require('./app/imagens/icones/Suapaginaselec.jpg')} />
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.icones}>
+          <Image style={{width:92,height:52}} resizeMode='stretch' source={require('./app/imagens/icones/Criar.jpg')} />
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.icones}>
+          <Image style={{width:92,height:52}} resizeMode='stretch' source={require('./app/imagens/icones/Acompanhar.jpg')} />
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.icones}>
+          <Image style={{width:92,height:52}} resizeMode='stretch' source={require('./app/imagens/icones/Ajustes.jpg')} />
+          </TouchableOpacity>
         </View>
 
       </View>
@@ -83,7 +99,7 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   headerText:{
-    paddingTop: 25,
+    paddingTop: 20,
     color: 'white',
     fontSize: 24,
   },
@@ -94,7 +110,10 @@ const styles = StyleSheet.create({
     width: 410,
   },
   subBotoes:{
-
+    flex:1,
+    alignSelf: 'center',
+    top: 10,
+    left: 20,
 
   },
   subBotoesText:{
@@ -111,19 +130,19 @@ const styles = StyleSheet.create({
   },
   labelcpf:{
     top: 30,
-    left: 30,
+    left: 20,
     fontSize: 20,
     color: '#808080',
   },
   labelcompra:{
     top: 60,
-    left: 30,
+    left: 20,
     fontSize: 20,
     color: '#808080',
   },
   barrainput1:{
     position: 'relative',
-    left: 50,
+    left: 30,
     top: 42,
     borderRadius: 100/2,
     width: 300,
@@ -132,7 +151,7 @@ const styles = StyleSheet.create({
   },
   barrainput2:{
     position: 'relative',
-    left: 50,
+    left: 30,
     top: 80,
     borderRadius: 100/2,
     width: 300,
@@ -151,8 +170,12 @@ const styles = StyleSheet.create({
   },
   footer:{
     flex: 0.30,
-    alignItems: 'center',
     flexDirection: 'row',
+    paddingBottom: 10,
+    alignItems: 'center',
+  },
+  icones:{
+    flex:1,
   },
 });
 
