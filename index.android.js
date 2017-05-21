@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {
+  Dimensions,
   AppRegistry,
   StyleSheet,
   Text,
@@ -8,14 +9,22 @@ import {
   TextInput,
   KeyboardAvoidingView,
   Image,
+  ScrollView,
 } from 'react-native';
+
+const window = Dimensions.get('window');
+
+export const altura_header = (window.height/5)-37;
+export const altura_centro = (window.height)-180;
+export const altura_footer = (window.height/8)-30;
+
 
 export default class Porquin extends Component {
   render() {
     return (
 
-
-      <View style={styles.container}>
+      <ScrollView>
+      <KeyboardAvoidingView behavior='padding' style={styles.container}>
 
         <View style={styles.header}>
           <View style={styles.headerTextBox}>
@@ -24,40 +33,48 @@ export default class Porquin extends Component {
           {/*Ainda nao tem as ações dos botoes de menus.*/}
           <View style={styles.subBarra}>
             <TouchableOpacity style={styles.subBotoes}>
-            <Text style={styles.subBotoesText}>INSERIR</Text>
+              <Text style={styles.subBotoesText}>INSERIR</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.subBotoes}>
-            <Text style={styles.subBotoesText}>RETIRAR</Text>
+              <Text style={styles.subBotoesText}>RETIRAR</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.subBotoes}>
-            <Text style={styles.subBotoesText}></Text>
+              <Text style={styles.subBotoesText}></Text>
             </TouchableOpacity>
           </View>
         </View>
 
         {/*Centro da tela, CPF,Valor e botão registrar*/}
         <View style={styles.centroContainer}>
-          <Text style={styles.labelcpf}>Digite o CPF do comprador:</Text>
-          <View style={styles.barrainput1}>
+          <View style={styles.containerCPF}>
+            <Text style={styles.labelcpf}>Digite o CPF do comprador:</Text>
+            <View style={styles.barrainput1}>
             <TextInput style={{fontSize:22,textAlign:'center',fontWeight: 'bold'}}
-            onChangeText={(text)=>this.setState({text})}
-             placeholder={'CPF'}>
+              onChangeText={(text)=>this.setState({text})}
+              placeholder={'CPF'}>
             </TextInput>
+            </View>
           </View>
-          <Text style={styles.labelcompra}>Digite o valor da compra:</Text>
-          <View style={styles.barrainput2}>
-            <TextInput style={{fontSize:22,textAlign:'center',color:'green',fontWeight: 'bold'}}
-            onChangeText={(text)=>this.setState({text})}
-            placeholder={'Valor'}>
-            </TextInput>
+          <View style={styles.containerValor}>
+            <Text style={styles.labelcompra}>Digite o valor da compra:</Text>
+            <View style={styles.barrainput2}>
+              <TextInput style={{fontSize:22,textAlign:'center',color:'green',fontWeight: 'bold'}}
+              onChangeText={(text)=>this.setState({text})}
+              placeholder={'Valor'}>
+              </TextInput>
+              </View>
+          </View>
+          <View style={styles.containerRegistro}>
+
+            <TouchableOpacity
+            onPress={() => {alert('era para o popup aparecer aqui')}}
+            style={styles.botaoregistrar} >
+              <Text style={{fontSize:16,color:'white',top: 2,textAlign:'center', fontFamily:'System'}}>REGISTRAR</Text>
+            </TouchableOpacity>
+
           </View>
         </View>
 
-        <TouchableOpacity
-        onPress={() => {alert('era para o popup aparecer aqui')}}
-        style={styles.botaoregistrar} >
-          <Text style={{fontSize:16,color:'white',top: 2, fontFamily:'System'}}>REGISTRAR</Text>
-        </TouchableOpacity>
 
 
 
@@ -76,7 +93,8 @@ export default class Porquin extends Component {
           </TouchableOpacity>
         </View>
 
-      </View>
+      </KeyboardAvoidingView>
+      </ScrollView>
 
     );
   }
@@ -87,7 +105,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   header: {
-    flex:0.55,
+    height: altura_header,
+    position: 'relative',
     alignItems: 'center',
     flexDirection: 'column',
     backgroundColor: '#607D8B',
@@ -105,6 +124,7 @@ const styles = StyleSheet.create({
   },
   subBarra:{
     flex:1,
+    justifyContent: 'center',
     flexDirection: 'row',
     paddingRight: 22,
     width: 410,
@@ -112,21 +132,31 @@ const styles = StyleSheet.create({
   subBotoes:{
     flex:1,
     alignSelf: 'center',
+    alignItems: 'center',
     top: 10,
     left: 20,
 
   },
   subBotoesText:{
-    flex: 1,
     fontSize: 16,
-    letterSpacing: 1,
+    bottom: 5,
+    right: 15,
     fontFamily:'System',
     color: 'white',
     alignSelf: 'center',
     textAlign: 'center',
   },
   centroContainer:{
-    flex:2.50,
+    height: altura_centro,
+  },
+  containerCPF:{
+    flex:0.20,
+  },
+  containerValor:{
+    flex:0.20,
+  },
+  containerRegistro:{
+    flex:0.2,
   },
   labelcpf:{
     top: 30,
@@ -135,13 +165,11 @@ const styles = StyleSheet.create({
     color: '#808080',
   },
   labelcompra:{
-    top: 60,
     left: 20,
     fontSize: 20,
     color: '#808080',
   },
   barrainput1:{
-    position: 'relative',
     left: 30,
     top: 42,
     borderRadius: 100/2,
@@ -150,26 +178,23 @@ const styles = StyleSheet.create({
     backgroundColor: '#d9d9d9',
   },
   barrainput2:{
-    position: 'relative',
     left: 30,
-    top: 80,
+    top: 10,
     borderRadius: 100/2,
     width: 300,
     height: 45,
     backgroundColor: '#d9d9d9',
   },
   botaoregistrar:{
-    position: 'absolute',
-    alignItems: 'center',
     alignSelf: 'center',
-    borderRadius: 100/2,
-    top: 400,
+    alignItems: 'center',
     width: 130,
     height: 30,
     backgroundColor: '#60B293',
+    borderRadius: 100/2,
   },
   footer:{
-    flex: 0.30,
+    height: altura_footer,
     flexDirection: 'row',
     paddingBottom: 10,
     alignItems: 'center',
