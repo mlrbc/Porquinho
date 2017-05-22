@@ -26,7 +26,7 @@ export default class Centro extends Component {
         <View style={styles.containerCPF}>
           <Text style={styles.labelcpf}>Digite o CPF do comprador:</Text>
           <View style={styles.barrainput1}>
-          <TextInput style={{fontSize:22,textAlign:'center',fontWeight: 'bold'}}
+          <TextInput style={{height: 60,bottom: 12,fontSize:22,textAlign:'center',fontWeight: 'bold'}}
             onChangeText={(text)=>this.setState({text})}
             placeholder={'CPF'}>
           </TextInput>
@@ -35,9 +35,10 @@ export default class Centro extends Component {
         <View style={styles.containerValor}>
           <Text style={styles.labelcompra}>Digite o valor da compra:</Text>
           <View style={styles.barrainput2}>
-            <TextInput style={{fontSize:22,textAlign:'center',color:'green',fontWeight: 'bold'}}
+            <TextInput style={{bottom: 10,height: 60,fontSize:22,textAlign:'left',color:'green',fontWeight: 'bold'}}
             onChangeText={(text)=>this.setState({text})}
             placeholder={'Valor'}>
+            <Text>  R$ </Text>
             </TextInput>
             </View>
         </View>
