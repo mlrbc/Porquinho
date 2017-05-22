@@ -14,7 +14,7 @@ export default class outraTela extends React.Component {
 
     const {navigate} = this.props.navigation;
     return (
-      <TouchableOpacity onPress={}>
+      <TouchableOpacity>
       <Text>VOLTA NUNES</Text>
       </TouchableOpacity>
 
