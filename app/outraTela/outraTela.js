@@ -2,6 +2,7 @@ import React from 'react';
 import {
   AppRegistry,
   Text,
+  TouchableOpacity,
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
@@ -10,8 +11,13 @@ export default class outraTela extends React.Component {
     header: null,
   };
   render() {
+
+    const {navigate} = this.props.navigation;
     return (
-      <Text>Hello, Moabe!</Text>
+      <TouchableOpacity onPress={}>
+      <Text>VOLTA NUNES</Text>
+      </TouchableOpacity>
+
     );
   }
 }
