@@ -41,8 +41,7 @@ export default class Centro extends Component {
         <View style={styles.containerCPF}>
           <Text style={styles.labelcpf}>Digite o CPF do comprador:</Text>
           <View style={styles.barrainput1}>
-          <TextInput style={{height: 60,bottom: 12,fontSize:22,textAlign:'left',fontWeight: 'bold'}}
-            onChangeText={(text)=>this.setState({text})}
+          <TextInput maxLength={13} underlineColorAndroid={'transparent'} style={styles.textInputCpf} onChangeText={(text)=>this.setState({text})}
             placeholder={'CPF'}>
           </TextInput>
           </View>
@@ -50,7 +49,7 @@ export default class Centro extends Component {
         <View style={styles.containerValor}>
           <Text style={styles.labelcompra}>Digite o valor da compra:</Text>
           <View style={styles.barrainput2}>
-            <TextInput style={{bottom: 10,height: 60,fontSize:19,textAlign:'left',color:'green',fontWeight: 'bold'}}
+            <TextInput underlineColorAndroid={'transparent'} style={styles.textInputValor}
             onChangeText={(text)=>this.setState({text})}
             placeholder={'Valor'}>
             <Text>  R$ </Text>
@@ -65,7 +64,7 @@ export default class Centro extends Component {
             }
           }
           style={styles.botaoregistrar} >
-            <Text style={{fontSize:16,color:'white',top: 2,textAlign:'center', fontFamily:'System'}}>REGISTRAR</Text>
+            <Text style={{fontSize:16,color:'white',top: 3,textAlign:'center', fontFamily:'System'}}>REGISTRAR</Text>
           </TouchableOpacity>
 
         </View>
@@ -132,12 +131,13 @@ const styles = StyleSheet.create({
   labelcpf:{
     top: 30,
     left: 20,
-    fontSize: 20,
+    fontSize: 17,
     color: '#808080',
+    fontFamily:'SF Compact Text',
   },
   labelcompra:{
     left: 20,
-    fontSize: 20,
+    fontSize: 17,
     color: '#808080',
   },
   barrainput1:{
@@ -146,7 +146,24 @@ const styles = StyleSheet.create({
     borderRadius: 100/2,
     width: 300,
     height: 45,
-    backgroundColor: '#e6e6e6',
+    backgroundColor: '#F4F4F4',
+  },
+  textInputCpf:{
+    bottom: 8,
+    height: 60,
+    left:13,
+    fontSize:20,
+    textAlign:'left',
+    fontWeight: 'bold',
+  },
+  textInputValor:{
+    bottom: 8,
+    height: 60,
+    fontSize:27,
+    textAlign:'left',
+    color:'green',
+    fontWeight: 'bold',
+    fontFamily: 'SF UI Text',
   },
   barrainput2:{
     left: 30,
@@ -154,7 +171,9 @@ const styles = StyleSheet.create({
     borderRadius: 100/2,
     width: 300,
     height: 45,
-    backgroundColor: '#e6e6e6',
+    backgroundColor: '#F4F4F4',
+    fontFamily: 'SF UI Text',
+
   },
   botaoregistrar:{
     alignSelf: 'center',
