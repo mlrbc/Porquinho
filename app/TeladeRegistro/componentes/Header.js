@@ -14,7 +14,7 @@ import {
 
 const window = Dimensions.get('window');
 
-export const altura_header = (window.height/5)-20;
+export const altura_header = (window.height/5)-25;
 export const altura_centro = (window.height)-180;
 export const altura_footer = (window.height/8)-32;
 
@@ -60,14 +60,15 @@ const styles = StyleSheet.create({
 
   },
   headerTextBox:{
-    flex: 1.50,
+    flex: 1.20,
     flexDirection: 'row',
     alignItems: 'center'
   },
   headerText:{
-    paddingTop: 20,
+    paddingTop: 10,
     color: 'white',
-    fontSize: 24,
+    fontSize: 20,
+    fontFamily:'SF-UI-Text-Regular',
   },
   subBarra:{
     flex:1,
@@ -75,6 +76,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     paddingRight: 22,
     width: 410,
+    height:100,
   },
   subBotoes:{
     flex:1,
@@ -85,8 +87,8 @@ const styles = StyleSheet.create({
 
   },
   subBotoesText:{
-    fontSize: 16,
-    bottom: 5,
+    fontSize: 14,
+    bottom: 4,
     right: 15,
     fontFamily:'System',
     color: 'white',
