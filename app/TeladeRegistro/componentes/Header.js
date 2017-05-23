@@ -48,9 +48,6 @@ export default class Header extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
   header: {
     height: altura_header,
     position: 'relative',
