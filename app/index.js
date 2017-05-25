@@ -9,8 +9,8 @@ import { StackNavigator } from 'react-navigation';
 
 const SimpleApp = StackNavigator(
 
-  {Listagem: {screen: Listagem},
-   SuaPagina: {screen: SuaPagina},
+  {SuaPagina: {screen: SuaPagina},
+   Listagem: {screen: Listagem},
    TelaRegistro: {screen: TelaRegistro},
    outraTela: {screen: outraTela},
    });
