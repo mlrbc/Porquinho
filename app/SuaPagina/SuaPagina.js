@@ -19,7 +19,7 @@ import Footer from './componentes/Footer';
 
 
 
-export default class TelaRegistro extends Component {
+export default class SuaPagina extends Component {
   static navigationOptions = {
     header:null,
   };

@@ -23,13 +23,13 @@ export default class Footer extends Component {
     return(
 
       <View style={styles.footer}>
-        <TouchableOpacity style={styles.icones} onPress={() => this.props.navigate('SuaPagina')}>
-        {/*ESPERAR NUNES MANDAR OS ICONES*/}
-        <Image style={{width:85,height:52,opacity:0.29}} resizeMode='contain' source={require('../imagens/icones/SuaPagina.png')} />
-        </TouchableOpacity>
         <TouchableOpacity style={styles.icones}>
         {/*ESPERAR NUNES MANDAR OS ICONES*/}
-        <Image style={{width:85,height:52,left:4}} resizeMode='contain' source={require('../imagens/icones/Registrar.png')} />
+        <Image style={{width:85,height:52}} resizeMode='contain' source={require('../imagens/icones/SuaPagina.png')} />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.icones} onPress={() => this.props.navigate('TelaRegistro')}>
+        {/*ESPERAR NUNES MANDAR OS ICONES*/}
+        <Image style={{width:85,height:52,left:4,opacity:0.29}} resizeMode='contain' source={require('../imagens/icones/Registrar.png')} />
         </TouchableOpacity>
         <TouchableOpacity style={styles.icones} onPress={() => this.props.navigate('Listagem')}>
         {/*ESPERAR NUNES MANDAR OS ICONES*/}

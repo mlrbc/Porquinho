@@ -16,7 +16,7 @@ import {
 const window = Dimensions.get('window');
 
 export const altura_header = (window.height/5)-20;
-export const altura_centro = (window.height)-200;
+export const altura_centro = (window.height)-180;
 export const altura_footer = (window.height/8)-32;
 export const altura = (window.height);
 export const largura = (window.width);
@@ -124,6 +124,9 @@ const styles = StyleSheet.create({
     height:(altura_centro/4),
 
   },
+  containerRegistro:{
+    flex:0.10,
+  },
   labelcpf:{
     top: 30,
     left: 20,
@@ -149,7 +152,6 @@ const styles = StyleSheet.create({
     bottom: 8,
     height: 60,
     left:13,
-    color: '#565656',
     fontSize:20,
     textAlign:'left',
     fontWeight: 'bold',
@@ -159,9 +161,8 @@ const styles = StyleSheet.create({
     height: 60,
     fontSize:27,
     textAlign:'left',
-    color:'#60B293',
+    color:'green',
     fontWeight: 'bold',
-    lineHeight: 28,
     fontFamily: 'SF UI Text',
   },
   barrainput2:{
@@ -173,6 +174,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#F4F4F4',
 
 
+  },
+  botaoregistrar:{
+    alignSelf: 'center',
+    alignItems: 'center',
+    width: 130,
+    height: 30,
+    backgroundColor: '#60B293',
+    borderRadius: 100/2,
   },
   container1:{
     flex:1,

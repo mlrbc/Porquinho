@@ -31,14 +31,12 @@ export default class TelaRegistro extends Component {
       <ScrollView>
       <KeyboardAvoidingView behavior='padding' style={styles.container}>
 
-			
-			
-		  {/*Cabeçalho falta modularizar*/}
+
         <Header navigate = {navigate}/>
         {/*Centro da tela, CPF,Valor e botão registrar*/}
         <Centro/>
 
-        <Footer navigate = {navigate}/>
+        <Footer/>
 
       </KeyboardAvoidingView>
       </ScrollView>
