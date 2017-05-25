@@ -66,6 +66,7 @@
 		6C2E9651113C4E63AF8F183B /* SF-UI-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4D9CF2212BF441CDBDEB1012 /* SF-UI-Text-Medium.otf */; };
 		FEE702C47CD64524B8D49EED /* SF-UI-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 95C073AFCD114740BA2AE1B2 /* SF-UI-Text-Regular.otf */; };
 		719AE386F9AF4355866B2EBA /* SF-UI-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5D39776AEE714E57B49571BA /* SF-UI-Text-Semibold.otf */; };
+		8EC1267970F94E468BBEF670 /* GrandHotel-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B86BFDCC8131450989355531 /* GrandHotel-Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -316,6 +317,7 @@
 		4D9CF2212BF441CDBDEB1012 /* SF-UI-Text-Medium.otf */ = {isa = PBXFileReference; name = "SF-UI-Text-Medium.otf"; path = "../assets/fonts/SF-UI-Text-Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		95C073AFCD114740BA2AE1B2 /* SF-UI-Text-Regular.otf */ = {isa = PBXFileReference; name = "SF-UI-Text-Regular.otf"; path = "../assets/fonts/SF-UI-Text-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		5D39776AEE714E57B49571BA /* SF-UI-Text-Semibold.otf */ = {isa = PBXFileReference; name = "SF-UI-Text-Semibold.otf"; path = "../assets/fonts/SF-UI-Text-Semibold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B86BFDCC8131450989355531 /* GrandHotel-Regular.otf */ = {isa = PBXFileReference; name = "GrandHotel-Regular.otf"; path = "../assets/fonts/GrandHotel-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -579,6 +581,7 @@
 				4D9CF2212BF441CDBDEB1012 /* SF-UI-Text-Medium.otf */,
 				95C073AFCD114740BA2AE1B2 /* SF-UI-Text-Regular.otf */,
 				5D39776AEE714E57B49571BA /* SF-UI-Text-Semibold.otf */,
+				B86BFDCC8131450989355531 /* GrandHotel-Regular.otf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -973,6 +976,7 @@
 				6C2E9651113C4E63AF8F183B /* SF-UI-Text-Medium.otf in Resources */,
 				FEE702C47CD64524B8D49EED /* SF-UI-Text-Regular.otf in Resources */,
 				719AE386F9AF4355866B2EBA /* SF-UI-Text-Semibold.otf in Resources */,
+				8EC1267970F94E468BBEF670 /* GrandHotel-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

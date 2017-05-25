@@ -25,7 +25,7 @@ export default class Header extends Component {
       <View style={styles.header}>
         <View style={styles.headerTextBox}>
           <Text style={styles.headerText}>Porquin</Text>
-          <Text style={{top: 10,fontFamily:'System',fontSize: 24,color:'white'}}>Loja</Text>
+          <Text style={{top: 8,fontFamily:'notoserif',fontWeight:'bold',fontSize: 14,lineHeight:20,color:'white'}}>LOJA</Text>
         </View>
         {/*Ainda nao tem as ações dos botoes de menus.*/}
         <View style={styles.subBarra}>
@@ -64,10 +64,11 @@ const styles = StyleSheet.create({
   },
   headerText:{
     paddingTop: 10,
-    right: 10,
+    right: 7,
     color: 'white',
-    fontSize: 32,
-    fontFamily:'Pacifico',
+    lineHeight: 49,
+    fontSize: 36,
+    fontFamily:'GrandHotel-Regular',
   },
   subBarra:{
     flex:1,

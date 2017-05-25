@@ -124,9 +124,6 @@ const styles = StyleSheet.create({
     height:(altura_centro/4),
 
   },
-  containerRegistro:{
-    flex:0.10,
-  },
   labelcpf:{
     top: 30,
     left: 20,
@@ -152,6 +149,7 @@ const styles = StyleSheet.create({
     bottom: 8,
     height: 60,
     left:13,
+    color: '#565656',
     fontSize:20,
     textAlign:'left',
     fontWeight: 'bold',
@@ -161,8 +159,9 @@ const styles = StyleSheet.create({
     height: 60,
     fontSize:27,
     textAlign:'left',
-    color:'green',
+    color:'#60B293',
     fontWeight: 'bold',
+    lineHeight: 28,
     fontFamily: 'SF UI Text',
   },
   barrainput2:{
@@ -174,14 +173,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#F4F4F4',
 
 
-  },
-  botaoregistrar:{
-    alignSelf: 'center',
-    alignItems: 'center',
-    width: 130,
-    height: 30,
-    backgroundColor: '#60B293',
-    borderRadius: 100/2,
   },
   container1:{
     flex:1,
