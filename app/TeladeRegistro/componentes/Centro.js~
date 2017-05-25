@@ -138,6 +138,7 @@ const styles = StyleSheet.create({
     left: 20,
     fontSize: 17,
     color: '#808080',
+    fontFamily: 'SF UI Text',
   },
   barrainput1:{
     left: 30,
@@ -171,7 +172,7 @@ const styles = StyleSheet.create({
     width: 300,
     height: 45,
     backgroundColor: '#F4F4F4',
-    fontFamily: 'SF UI Text',
+
 
   },
   botaoregistrar:{
