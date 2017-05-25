@@ -14,7 +14,7 @@ import {
 
 const window = Dimensions.get('window');
 
-export const altura_header = (window.height/5)-55;
+export const altura_header = (window.height/5)-68;
 export const altura_centro = (window.height)-180;
 export const altura_footer = (window.height/8)-32;
 
