@@ -13,7 +13,6 @@ import {
 } from 'react-native';
 import Header from './componentes/Header';
 import Centro from './componentes/Centro';
-import Footer from './componentes/Footer';
 
 
 
@@ -45,7 +44,6 @@ export default class Listagem extends Component {
         {/*Centro da tela, CPF,Valor e botão registrar*/}
         <Centro/>
 
-        <Footer navigate = {navigate}/>
 
       </KeyboardAvoidingView>
       </ScrollView>
