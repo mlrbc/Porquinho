@@ -18,7 +18,7 @@ const SimpleApp = TabNavigator(
      tabBarOptions: {
        showIcon: true,
        showLabel: false,
-       pressOpacity: 1,
+       pressOpacity: 4,
        labelStyle:{
         color: 'black',
         fontSize: 12,

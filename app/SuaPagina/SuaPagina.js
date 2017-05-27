@@ -34,7 +34,7 @@ export default class SuaPagina extends Component {
     const {navigate} = this.props.navigation;
     return (
 
-      <ScrollView>
+      <ScrollView style={{backgroundColor:'white'}}>
       <KeyboardAvoidingView behavior='padding' style={styles.container}>
 
 			

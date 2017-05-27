@@ -34,7 +34,7 @@ export default class TelaRegistro extends Component {
     const {navigate} = this.props.navigation;
     return (
 
-      <ScrollView>
+      <ScrollView style={{backgroundColor:'white'}}>
       <KeyboardAvoidingView behavior='padding' style={styles.container}>
 
 			
@@ -55,6 +55,7 @@ export default class TelaRegistro extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor:'white',
   },
   icon:{
     left:3,
