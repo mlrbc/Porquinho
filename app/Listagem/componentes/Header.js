@@ -1,22 +1,14 @@
 import React, { Component } from 'react';
 import {
   Dimensions,
-  AppRegistry,
   StyleSheet,
   Text,
   View,
-  TouchableOpacity,
-  TextInput,
-  KeyboardAvoidingView,
-  Image,
-  ScrollView,
 } from 'react-native';
 
 const window = Dimensions.get('window');
 
 export const altura_header = (window.height/5)-68;
-export const altura_centro = (window.height)-180;
-export const altura_footer = (window.height/8)-32;
 
 export default class Header extends Component {
   render(){

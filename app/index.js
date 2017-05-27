@@ -18,13 +18,17 @@ const SimpleApp = TabNavigator(
      tabBarOptions: {
        showIcon: true,
        showLabel: false,
-       pressOpacity: 4,
+       inactiveBackgroundColor: 'gray',
+       pressOpacity: 2,
        labelStyle:{
         color: 'black',
         fontSize: 12,
        },
        style:{
          backgroundColor: 'white',
+       },
+       indicatorStyle:{
+         backgroundColor: 'yellow',
        },
        iconStyle:{
           height: 85,
