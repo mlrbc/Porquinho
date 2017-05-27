@@ -14,7 +14,7 @@ import {
 
 const window = Dimensions.get('window');
 
-export const altura_header = (window.height/5)-25;
+export const altura_header = (window.height/5)-68;
 export const altura_centro = (window.height)-180;
 export const altura_footer = (window.height/8)-32;
 
@@ -25,22 +25,10 @@ export default class Header extends Component {
       <View style={styles.header}>
         <View style={styles.headerTextBox}>
           <Text style={styles.headerText}>Porquin</Text>
-          <Text style={{top: 10,fontFamily:'System',fontSize: 24,color:'white'}}>Loja</Text>
+          <Text style={{top: 5,fontFamily:'notoserif',fontWeight:'bold',fontSize: 14,lineHeight:20,color:'white'}}>LOJA</Text>
         </View>
         {/*Ainda nao tem as ações dos botoes de menus.*/}
-        <View style={styles.subBarra}>
-          <TouchableOpacity
-           onPress={() => this.props.navigate('outraTela')}
-           style={styles.subBotoes}>
-            <Text style={styles.subBotoesText}>INSERIR</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.subBotoes}>
-            <Text style={styles.subBotoesText}>RETIRAR</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.subBotoes}>
-            <Text style={styles.subBotoesText}></Text>
-          </TouchableOpacity>
-        </View>
+
       </View>
 
 
@@ -63,11 +51,12 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   headerText:{
-    paddingTop: 10,
-    right: 10,
+    paddingTop: 5,
+    right: 7,
     color: 'white',
-    fontSize: 32,
-    fontFamily:'Pacifico',
+    lineHeight: 49,
+    fontSize: 36,
+    fontFamily:'GrandHotel-Regular',
   },
   subBarra:{
     flex:1,
