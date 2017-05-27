@@ -21,6 +21,13 @@ import Footer from './componentes/Footer';
 
 export default class TelaRegistro extends Component {
   static navigationOptions = {
+    tabBarIcon: ({ tintColor }) => (
+      <Image
+        style={styles.icon}
+        resizeMode='center'
+        source={require('../imagens/icones/Registrar.png')}
+      />
+    ),
     header:null,
   };
 
@@ -51,5 +58,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-
+  icon:{
+    width: 96,
+    height: 60,
+  },
 });

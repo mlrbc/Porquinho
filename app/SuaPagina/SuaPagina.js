@@ -21,6 +21,13 @@ import Footer from './componentes/Footer';
 
 export default class SuaPagina extends Component {
   static navigationOptions = {
+    tabBarIcon: ({ tintColor }) => (
+      <Image
+        resizeMode='center'
+        source={require('../imagens/icones/SuaPagina.png')}
+        style={styles.icon}
+      />
+    ),
     header:null,
   };
 
@@ -51,5 +58,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-
+   icon:{
+    width: 96,
+    height: 60,
+  },
 });
