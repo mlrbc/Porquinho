@@ -1,15 +1,9 @@
 import React, { Component } from 'react';
 import {
-  AppRegistry,
   StyleSheet,
-  Text,
-  View,
-  TouchableOpacity,
-  TextInput,
   KeyboardAvoidingView,
   Image,
   ScrollView,
-  Modal,
 } from 'react-native';
 import Header from './componentes/Header';
 import Centro from './componentes/Centro';
