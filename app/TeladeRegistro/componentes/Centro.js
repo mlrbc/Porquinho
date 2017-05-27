@@ -80,7 +80,7 @@ export default class Centro extends Component {
               <View style={{position:'absolute',borderRadius:100/2,height:100,width:50}}>
               </View>
                 <View>
-                  <Image style={styles.foto} resizeMode='stretch' source={require('../imagens/pp.jpg')} />
+                  <Image style={styles.foto} resizeMode='stretch' source={require('../../imagens/pp.jpg')} />
                 </View>
                 <Text style={styles.textonivel}>Cliente Fíel</Text>
                 <Text style={styles.textonome}>{this.pessoa.nome}</Text>
