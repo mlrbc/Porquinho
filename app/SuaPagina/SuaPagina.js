@@ -28,7 +28,7 @@ export default class SuaPagina extends Component {
     const {navigate} = this.props.navigation;
     return (
 
-      <ScrollView style={{backgroundColor:'white'}}>
+      <ScrollView style={{backgroundColor:'white',flex:1}}>
       <KeyboardAvoidingView behavior='padding' style={styles.container}>
 
 			
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
    icon:{
-    width: 96,
+    width: 85,
     height: 60,
   },
 });

@@ -28,7 +28,7 @@ export default class Listagem extends Component {
     const {navigate} = this.props.navigation;
     return (
 
-      <ScrollView style={{backgroundColor:'white'}}>
+      <ScrollView style={{backgroundColor:'white',flex:1}}>
       <KeyboardAvoidingView behavior='padding' style={styles.container}>
 
 			

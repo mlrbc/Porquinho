@@ -31,8 +31,8 @@ const SimpleApp = TabNavigator(
          backgroundColor: '#E6E600',
        },
        iconStyle:{
-          height: 85,
-          width: 70,
+          width: 85,
+          height: 60,
        },
        tabStyle:{
          height:70,

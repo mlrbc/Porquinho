@@ -24,16 +24,17 @@ export default class Centro extends Component {
   constructor(){
     super();
     this.state = {visible:false,popup:null,text:''};
-    this.pessoa = {nome:'Moabe Reato',age:'18',profission:'Estudante'};
+    this.pessoa = {nome:'Moabe Reato',age:'18',profission:'Estudante',imagem:"https://scontent.frec8-1.fna.fbcdn.net/v/t1.0-9/18423858_1594894783917055_734944950526860405_n.jpg?oh=85df8fd6e5b57855bf5b89cebd1d01c6&oe=59B02328"};
 
 
   }
 
 
   render(){
-
+    
     return(
 
+        
       <View style={styles.centroContainer}>
         <View style={styles.containerCPF}>
           <Text style={styles.labelcpf}>Digite o CPF do comprador:</Text>
@@ -66,7 +67,7 @@ export default class Centro extends Component {
 
         </View>
 
-        <View>
+        <View style={{flex:1}}>
         <Modal
             animationType={"fade"}
             transparent={true}
@@ -78,7 +79,7 @@ export default class Centro extends Component {
               <View style={{position:'absolute',borderRadius:100/2,height:100,width:50}}>
               </View>
                 <View>
-                  <Image style={styles.foto} resizeMode='stretch' source={require('../../imagens/pp.jpg')} />
+                  <Image style={styles.foto} resizeMode='stretch' source={{uri: this.pessoa.imagem}} />
                 </View>
                 <Text style={styles.textonivel}>Cliente Fíel</Text>
                 <Text style={styles.textonome}>{this.pessoa.nome}</Text>
