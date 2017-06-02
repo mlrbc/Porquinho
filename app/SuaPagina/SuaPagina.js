@@ -18,7 +18,7 @@ export default class SuaPagina extends Component {
       <Image
         resizeMode='center'
         source={require('../imagens/icones/SuaPagina.png')}
-        style={styles.icon}
+        style={[styles.icon, {width: 40 },  tintColor !== '#F00' && { opacity: 0.29 }]}
       />
     ),
     header:null,

@@ -16,7 +16,7 @@ export default class TelaRegistro extends Component {
   static navigationOptions = {
     tabBarIcon: ({ tintColor }) => (
       <Image
-        style={styles.icon}
+        style={[styles.icon, {width: 40 },  tintColor !== '#F00' && { opacity: 0.29 }]}
         resizeMode='center'
         source={require('../imagens/icones/Registrar.png')}
       />

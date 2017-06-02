@@ -18,7 +18,7 @@ export default class Listagem extends Component {
       <Image
         resizeMode='center'
         source={require('../imagens/icones/Listagem.png')}
-        style={styles.icon}
+        style={[styles.icon, {width: 40 },  tintColor !== '#F00' && { opacity: 0.29 }]}
       />
     ),
     header:null,

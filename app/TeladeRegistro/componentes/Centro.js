@@ -15,227 +15,209 @@ import {
 
 const window = Dimensions.get('window');
 
-export const altura_centro = (window.height)-184;
+export const altura_centro = (window.height) - 184;
 export const altura = (window.height);
 export const largura = (window.width);
 
 
 export default class Centro extends Component {
-  constructor(){
+  constructor() {
     super();
-    this.state = {visible:false,popup:null,text:''};
-    this.pessoa = {nome:'Moabe Reato',age:'18',profission:'Estudante',imagem:"https://scontent.frec8-1.fna.fbcdn.net/v/t1.0-9/18423858_1594894783917055_734944950526860405_n.jpg?oh=85df8fd6e5b57855bf5b89cebd1d01c6&oe=59B02328"};
-
-
+    this.state = { visible: false, popup: null, text: '' };
+    this.pessoa = { nome: 'Moabe Reato', age: '18', profission: 'Estudante', imagem: "https://scontent.frec8-1.fna.fbcdn.net/v/t1.0-9/18423858_1594894783917055_734944950526860405_n.jpg?oh=85df8fd6e5b57855bf5b89cebd1d01c6&oe=59B02328" };
   }
 
-
-  render(){
-    
-    return(
-
-        
+  render() {
+    return (
       <View style={styles.centroContainer}>
-        <View style={styles.containerCPF}>
-          <Text style={styles.labelcpf}>Digite o CPF do comprador:</Text>
-          <View style={styles.barrainput1}>
-          <TextInput maxLength={13} underlineColorAndroid={'transparent'} style={styles.textInputCpf} onChangeText={(text)=>this.setState({text})}
-            placeholder={'CPF'}>
-          </TextInput>
-          </View>
-        </View>
-        <View style={styles.containerValor}>
-          <Text style={styles.labelcompra}>Digite o valor da compra:</Text>
-          <View style={styles.barrainput2}>
-            <TextInput underlineColorAndroid={'transparent'} style={styles.textInputValor}
-            onChangeText={(text)=>this.setState({text})}
-            placeholder={'Valor'}>
-            <Text>  R$ </Text>
-            </TextInput>
+        <ScrollView style={{ flex: 1 }}>
+          <View style={styles.containerCPF}>
+            <Text style={styles.labelcpf}>Digite o CPF do comprador:</Text>
+            <View style={styles.barrainput1}>
+              <TextInput maxLength={13} underlineColorAndroid={'transparent'} style={styles.textInputCpf} onChangeText={(text) => this.setState({ text })}
+                placeholder={'CPF'} keyboardType='numeric'>
+              </TextInput>
             </View>
-        </View>
-        <View style={styles.containerRegistro}>
+          </View>
+          <View style={styles.containerValor}>
+            <Text style={styles.labelcompra}>Digite o valor da compra:</Text>
+            <View style={styles.barrainput2}>
+              <Text style={styles.reais}>R$</Text>
+              <TextInput underlineColorAndroid={'transparent'} style={styles.textInputValor}
+                onChangeText={(text) => this.setState({ text })} keyboardType='numeric'
+                placeholder={'Valor'} />
+            </View>
+          </View>
+          <View style={styles.containerRegistro}>
+            <TouchableOpacity
+              onPress={() => {
+                this.setState({ visible: true });
+              }}
+              style={styles.botaoregistrar} >
+              <Text style={{ fontSize: 16, color: 'white', top: 3, textAlign: 'center', fontFamily: 'System' }}>REGISTRAR</Text>
+            </TouchableOpacity>
+          </View>
+        </ScrollView>
 
-          <TouchableOpacity
-          onPress={() => {
-                this.setState({visible:true});
-            }
-          }
-          style={styles.botaoregistrar} >
-            <Text style={{fontSize:16,color:'white',top: 3,textAlign:'center', fontFamily:'System'}}>REGISTRAR</Text>
-          </TouchableOpacity>
-
-        </View>
-
-        <View style={{flex:1}}>
-        <Modal
+        <View>
+          <Modal
             animationType={"fade"}
             transparent={true}
             visible={this.state.visible}
-            onRequestClose={() => {alert("Modal has been closed.")}}
-            >
+            supportedOrientations={['portrait', 'landscape']}>
             <View style={styles.container1}>
               <View style={styles.caixadetexto}>
-              <View style={{position:'absolute',borderRadius:100/2,height:100,width:50}}>
-              </View>
-                <View>
-                  <Image style={styles.foto} resizeMode='stretch' source={{uri: this.pessoa.imagem}} />
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                  <View>
+                    <Text style={styles.textonivel}>Cliente Fíel</Text>
+                    <Text style={styles.textonome}>{this.pessoa.nome}</Text>
+                    <Text style={styles.idadeprofissao}>{this.pessoa.age},{this.pessoa.profission}</Text>
+                  </View>
+                  <Image style={styles.foto} resizeMode='stretch' source={{ uri: this.pessoa.imagem }} />
                 </View>
-                <Text style={styles.textonivel}>Cliente Fíel</Text>
-                <Text style={styles.textonome}>{this.pessoa.nome}</Text>
-                <Text style={styles.idadeprofissao}>{this.pessoa.age},{this.pessoa.profission}</Text>
                 <Text style={styles.comprou}>Comprou</Text>
                 <Text style={styles.valor}>{this.state.text}</Text>
                 <View style={styles.containerRegistro}>
-
                   <TouchableOpacity
-                  onPress={() => {this.setState({visible:false})}}
-                  style={styles.botaoregistrar} >
-                    <Text style={{fontSize:16,color:'white',top: 2,textAlign:'center', fontFamily:'System'}}>CONFIRMAR</Text>
+                    onPress={() => { this.setState({ visible: false }) }}
+                    style={styles.botaoregistrar} >
+                    <Text style={{ fontSize: 16, color: 'white', top: 2, textAlign: 'center', fontFamily: 'System' }}>CONFIRMAR</Text>
                   </TouchableOpacity>
-
                 </View>
               </View>
             </View>
-        </Modal>
+          </Modal>
         </View>
       </View>
-
-
-
-
     );
   }
 }
 
 
 const styles = StyleSheet.create({
-  centroContainer:{
-    height: altura_centro,
+  centroContainer: {
+    flex: 1,
     backgroundColor: 'white',
   },
-  containerCPF:{
-    height:(altura_centro/4),
-
+  containerCPF: {
+    flex: 1
   },
-  containerValor:{
-    top:20,
-    height:(altura_centro/4),
-
+  containerValor: {
+    marginTop: 20
   },
-  labelcpf:{
-    top: 30,
-    left: 20,
+  labelcpf: {
+    marginTop: 20,
+    marginBottom: 20,
+    marginLeft: 20,
     fontSize: 17,
     color: '#808080',
-    fontFamily:'SF Compact Text',
+    fontFamily: 'System',
   },
-  labelcompra:{
-    left: 20,
+  labelcompra: {
+    marginTop: 20,
+    marginBottom: 20,
+    marginLeft: 20,
     fontSize: 17,
     color: '#808080',
-    fontFamily: 'SF UI Text',
+    fontFamily: 'System',
   },
-  barrainput1:{
-    left: 30,
-    top: 42,
-    borderRadius: 100/2,
-    width: 300,
+  barrainput1: {
+    marginHorizontal: 20,
+    borderRadius: 100 / 2,
     height: 45,
     backgroundColor: '#F4F4F4',
   },
-  textInputCpf:{
+  textInputCpf: {
     bottom: 8,
     height: 60,
-    left:13,
+    left: 13,
     color: '#565656',
-    fontSize:20,
-    textAlign:'left',
+    fontSize: 20,
+    textAlign: 'left',
     fontWeight: 'bold',
   },
-  textInputValor:{
-    bottom: 8,
+  textInputValor: {
+    bottom: 7,
     height: 60,
-    fontSize:27,
-    textAlign:'left',
-    color:'#60B293',
+    flex: 1,
+    fontSize: 27,
+    textAlign: 'left',
+    color: '#60B293',
     fontWeight: 'bold',
-    lineHeight: 28,
-    fontFamily: 'SF UI Text',
+    fontFamily: 'System',
   },
-  barrainput2:{
-    left: 30,
-    top: 10,
-    borderRadius: 100/2,
-    width: 300,
+  reais: {
+    alignSelf: 'center',
+    fontSize: 27,
+    fontWeight: 'bold',
+    color: '#60B293',
+    marginLeft: 10,
+    marginRight: 5
+  },
+  barrainput2: {
+    marginHorizontal: 20,
+    borderRadius: 23,
     height: 45,
     backgroundColor: '#F4F4F4',
-
-
+    flexDirection: 'row'
   },
-  container1:{
-    flex:1,
+  container1: {
+    flex: 1,
     height: altura,
-    backgroundColor:'rgba(0, 0, 0,0.50)',
+    backgroundColor: 'rgba(0, 0, 0,0.50)',
   },
-  caixadetexto:{
-    borderRadius: 100/2,
-    alignSelf:'center',
-    height: (altura/2)-40,
-    width: (largura)-50,
-    top: (altura/5),
+  caixadetexto: {
+    marginTop: 40,
+    padding: 20,
+    borderRadius: 35,
+    alignSelf: 'center',
+    width: 300,
     backgroundColor: 'white',
   },
-  foto:{
-    top:26,
-    left: 230,
-    position:'absolute',
-    borderRadius:100,
-    width:62,
-    height:62,
-    },
-  textonivel:{
-    top: 15,
-    left: 50,
+  foto: {
+    borderRadius: 31,
+    width: 62,
+    height: 62,
+    alignSelf: 'flex-end',
+  },
+  textonivel: {
     opacity: 0.61,
     color: '#2B2B2B',
-    fontSize:16,
+    fontSize: 16,
+    backgroundColor: 'transparent',
   },
-  textonome:{
-    left: 50,
-    top: 15,
-    fontSize:24,
+  textonome: {
+    backgroundColor: 'transparent',
+    fontSize: 24,
     fontWeight: 'bold',
     color: 'rgba(0,0,0,0.87)',
   },
-  idadeprofissao:{
-    left:50,
-    top: 17,
-    fontSize:19,
-    color:'#565656',
+  idadeprofissao: {
+    fontSize: 19,
+    color: '#565656',
+    backgroundColor: 'transparent',
   },
-  comprou:{
-    fontSize:14,
+  comprou: {
+    marginTop: 20,
+    fontSize: 14,
     color: '#66B597',
-    top: 35,
-    alignSelf:'center',
+    alignSelf: 'center',
   },
-  valor:{
-    top:40,
-    fontSize:38,
+  valor: {
+    fontSize: 38,
     color: '#66B597',
-    alignSelf:'center',
+    alignSelf: 'center',
   },
-  containerRegistro:{
-    top: 70,
+  containerRegistro: {
+    marginTop: 20,
+    marginBottom: 20
   },
-  botaoregistrar:{
+  botaoregistrar: {
     alignSelf: 'center',
     alignItems: 'center',
     width: 130,
     height: 30,
     backgroundColor: '#60B293',
-    borderRadius: 100/2,
+    borderRadius: 15,
   },
-
 });

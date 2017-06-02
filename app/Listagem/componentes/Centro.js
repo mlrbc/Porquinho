@@ -126,14 +126,16 @@ export default class Centro extends Component {
     return (
       <View>
         <View style = {styles.person_container}>
-          <Image style = {styles.picture}
-             source = {require("../imagens/patricia.jpg")}
-             resizeMode = 'stretch' />
-           
-          <View style = {styles.person_data}>
-            <Text style = {styles.person_name}>{person.nome}</Text>
-            <Text style = {styles.person_info}>{person.idade + ", " + person.profissao}</Text>
-          </View> 
+          <View style={{ flex: 1, flexDirection: 'row' }}>
+            <Image style = {styles.picture}
+              source = {require("../imagens/patricia.jpg")}
+              resizeMode = 'stretch' />
+            
+            <View style = {styles.person_data}>
+              <Text style = {styles.person_name}>{person.nome}</Text>
+              <Text style = {styles.person_info}>{person.idade + ", " + person.profissao}</Text>
+            </View>
+          </View>
 
           <Image style = {styles.details}
              source = {require("../seta.jpg")}
@@ -167,7 +169,7 @@ export default class Centro extends Component {
         <View style = {styles.level_title}>
            <View style = {styles[ball_style]}/>
            <Text style = {styles[level_style]}>{nivel.total + " " + nivel.titulo + ":"}</Text>
-           </View>   
+        </View>   
 
         {that.listaConsumidores(nivel.pessoas)}
         
@@ -195,29 +197,29 @@ const styles = StyleSheet.create({
  
   container: {
     backgroundColor: '#FFFFFF',
- 
+    flex: 1
   },
   text_title: {
     marginLeft: 19,
     opacity: 0.72,
     color: '#000000',
-    fontFamily: 'Roboto',
+    fontFamily: 'System',
     fontSize: 22,
     fontWeight: 'bold',
     lineHeight: 24,
     marginTop: 21,
-
+    flex: 1
   },
 
   line_title: {
     height: 0,
-    width: 329,
     borderWidth: 1,
     borderStyle: 'solid',
     borderColor: '#979797',
     marginLeft: 19,
+    marginRight: 19,
     opacity: 0.38,
-
+    flex: 1,
   },
 
   ball1: {
@@ -247,18 +249,18 @@ const styles = StyleSheet.create({
 
   level_title: {
     flexDirection: 'row',
-
+    flex: 1
   },
  
   level_container: {
     marginTop: 27,
-    marginLeft: 19,
- 
+    marginHorizontal: 19,
+    flex: 1
   },
 
   level1: {
     color: '#A1A1A1',
-    fontFamily: 'SF Compact Text',
+    fontFamily: 'System',
     fontSize: 19,
     fontWeight: '500',
     lineHeight: 20,
@@ -268,7 +270,7 @@ const styles = StyleSheet.create({
 
   level2: {
     color: '#338285',
-    fontFamily: 'SF Compact Text',
+    fontFamily: 'System',
     fontSize: 19,
     fontWeight: '500',
     lineHeight: 20,
@@ -278,7 +280,7 @@ const styles = StyleSheet.create({
 
   level3: {
     color: '#F5A623',
-    fontFamily: 'SF Compact Text',
+    fontFamily: 'System',
     fontSize: 19,
     fontWeight: '500',
     lineHeight: 20,
@@ -293,25 +295,23 @@ const styles = StyleSheet.create({
 
   person_line: {
     height: 0,
-    width: 361,
     borderWidth: 1,
     borderStyle: 'solid',
     borderColor: '#979797',
     opacity: 0.10,
-    marginLeft: -19,
     marginTop: 10,
+    flex: 1
   },
 
   person_container: {
     flexDirection: 'row',
-    alignItems: 'center',
+    justifyContent: 'space-around',
     marginTop: 10,
- 
+    flex: 1
   },
 
   picture: {
-    position: 'relative',
-    borderRadius:100,
+    borderRadius:20,
     width:39,
     height:39, 
     
@@ -319,12 +319,12 @@ const styles = StyleSheet.create({
 
   person_data: {
     marginLeft: 12,
-   
+    flex: 1
   },
 
   person_name: {
     color: '#000000',
-    fontFamily: 'SF UI Text',
+    fontFamily: 'System',
     fontSize: 16,
     fontWeight: '500',
     lineHeight: 19,
@@ -333,17 +333,16 @@ const styles = StyleSheet.create({
 
   person_info: {
     color: '#000000',
-    fontFamily: 'SF UI Text',
+    fontFamily: 'System',
     fontSize: 14,
     fontWeight: '300',
     lineHeight: 16,
   },
 
   details: {
-    position: 'absolute',
-    left: 315,
     width: 8,
     height: 13,
+    alignSelf: 'center'
   },
  
   button: {    
@@ -356,16 +355,11 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     alignItems: 'center',
     marginTop: 12,
-
   },
 
   button_text: {
     fontSize: 13,
     textAlign: 'center',
-    width: 35,
-    height: 30,
-    borderStyle: 'solid',
-    borderRadius: 100/2,
    }, 
 
 });

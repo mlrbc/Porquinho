@@ -8,7 +8,7 @@ import {
 
 const window = Dimensions.get('window');
 
-export const altura_header = (window.height/5)-68;
+export const altura_header = 70;
 
 export default class Header extends Component {
   render(){
@@ -17,7 +17,7 @@ export default class Header extends Component {
       <View style={styles.header}>
         <View style={styles.headerTextBox}>
           <Text style={styles.headerText}>Porquin</Text>
-          <Text style={{top: 5,fontFamily:'notoserif',fontWeight:'bold',fontSize: 14,lineHeight:20,color:'white'}}>LOJA</Text>
+          <Text style={{top: 5,fontFamily: 'System',fontWeight:'bold',fontSize: 14,lineHeight:20,color:'white'}}>LOJA</Text>
         </View>
         {/*Ainda nao tem as ações dos botoes de menus.*/}
 

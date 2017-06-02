@@ -16,6 +16,7 @@ const SimpleApp = TabNavigator(
   }, {
     tabBarPosition: 'bottom',
      tabBarOptions: {
+       activeTintColor: '#F00',
        showIcon: true,
        showLabel: false,
        pressOpacity: 4.9,
@@ -27,12 +28,13 @@ const SimpleApp = TabNavigator(
          backgroundColor: 'white',
        },
        indicatorStyle:{
-         height:6,
+         height:0,
          backgroundColor: '#E6E600',
        },
        iconStyle:{
           width: 85,
           height: 60,
+          color: 'red'
        },
        tabStyle:{
          height:70,
