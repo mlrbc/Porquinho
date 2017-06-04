@@ -10,6 +10,7 @@ import {
   TouchableOpacity,
   Hr,
 } from 'react-native';
+import DetalheListagem from '../DetalheListagem';
 
 const window = Dimensions.get('window');
 
@@ -23,99 +24,317 @@ export const largura = (window.width);
 export default class Centro extends Component {
   constructor(){
     super();
-    this.state = {visible:false,popup:null,text:''};
-    this.niveis = [
-  {
-    titulo: "Não fidelizados",
-    total: '70',
-    pessoas: [
+    this.state = {level1: styles.hidden, level2: styles.hidden, level3: styles.hidden, origin: styles.container, button: styles.hidden};
+
+this.niveis = [
       {
-        nome: "Ana Júlia Torres",
-        idade: '18',
-        profissao: "Empresária",
-        foto: "../imagens/ana.jpg"
+        titulo: "Não fidelizados",
+        total: '70',
+        pessoas: [
+          {
+            nome: "Ana Júlia Torres",
+            idade: '18',
+            profissao: "Empresária",
+            foto: "../imagens/ana.jpg"
+          },
+          {
+            nome: "Letícia Mallemont",
+            idade: '22',
+            profissao: "Estudante",
+            foto: "../imagens/leticia.jpg"
+          },
+          {
+            nome: "Joana Darci",
+            idade: '23',
+            profissao: "Jornalista",
+            foto: "../imagens/joana.jpg"
+          },
+          {
+            nome: "Patrícia",
+            idade: '30',
+            profissao: "Estilista",
+            foto: "../imagens/patricia.jpg"
+          },
+          {
+            nome: "Ana Júlia Torres",
+            idade: '18',
+            profissao: "Empresária",
+            foto: "../imagens/ana.jpg"
+          },
+          {
+            nome: "Letícia Mallemont",
+            idade: '22',
+            profissao: "Estudante",
+            foto: "../imagens/leticia.jpg"
+          },
+          {
+            nome: "Joana Darci",
+            idade: '23',
+            profissao: "Jornalista",
+            foto: "../imagens/joana.jpg"
+          },
+          {
+            nome: "Patrícia",
+            idade: '30',
+            profissao: "Estilista",
+            foto: "../imagens/patricia.jpg"
+          },
+          {
+            nome: "Ana Júlia Torres",
+            idade: '18',
+            profissao: "Empresária",
+            foto: "../imagens/ana.jpg"
+          },
+          {
+            nome: "Letícia Mallemont",
+            idade: '22',
+            profissao: "Estudante",
+            foto: "../imagens/leticia.jpg"
+          },
+          {
+            nome: "Joana Darci",
+            idade: '23',
+            profissao: "Jornalista",
+            foto: "../imagens/joana.jpg"
+          },
+          {
+            nome: "Patrícia",
+            idade: '30',
+            profissao: "Estilista",
+            foto: "../imagens/patricia.jpg"
+          },
+          {
+            nome: "Ana Júlia Torres",
+            idade: '18',
+            profissao: "Empresária",
+            foto: "../imagens/ana.jpg"
+          },
+          {
+            nome: "Letícia Mallemont",
+            idade: '22',
+            profissao: "Estudante",
+            foto: "../imagens/leticia.jpg"
+          },
+          {
+            nome: "Joana Darci",
+            idade: '23',
+            profissao: "Jornalista",
+            foto: "../imagens/joana.jpg"
+          },
+          {
+            nome: "Patrícia",
+            idade: '30',
+            profissao: "Estilista",
+            foto: "../imagens/patricia.jpg"
+          }
+        ]
       },
       {
-        nome: "Letícia Mallemont",
-        idade: '22',
-        profissao: "Estudante",
-        foto: "../imagens/leticia.jpg"
+        titulo: "Fiéis",
+        total: '30',
+        pessoas: [
+          {
+            nome: "Ana Júlia Torres",
+            idade: '18',
+            profissao: "Empresária",
+            foto: "../imagens/ana.jpg"
+          },
+          {
+            nome: "Letícia Mallemont",
+            idade: '22',
+            profissao: "Estudante",
+            foto: "../imagens/leticia.jpg"
+          },
+          {
+            nome: "Joana Darci",
+            idade: '23',
+            profissao: "Jornalista",
+            foto: "../imagens/joana.jpg"
+          },
+          {
+            nome: "Patrícia",
+            idade: '30',
+            profissao: "Estilista",
+            foto: "../imagens/patricia.jpg"
+          },
+          {
+            nome: "Ana Júlia Torres",
+            idade: '18',
+            profissao: "Empresária",
+            foto: "../imagens/ana.jpg"
+          },
+          {
+            nome: "Letícia Mallemont",
+            idade: '22',
+            profissao: "Estudante",
+            foto: "../imagens/leticia.jpg"
+          },
+          {
+            nome: "Joana Darci",
+            idade: '23',
+            profissao: "Jornalista",
+            foto: "../imagens/joana.jpg"
+          },
+          {
+            nome: "Patrícia",
+            idade: '30',
+            profissao: "Estilista",
+            foto: "../imagens/patricia.jpg"
+          },
+          {
+            nome: "Ana Júlia Torres",
+            idade: '18',
+            profissao: "Empresária",
+            foto: "../imagens/ana.jpg"
+          },
+          {
+            nome: "Letícia Mallemont",
+            idade: '22',
+            profissao: "Estudante",
+            foto: "../imagens/leticia.jpg"
+          },
+          {
+            nome: "Joana Darci",
+            idade: '23',
+            profissao: "Jornalista",
+            foto: "../imagens/joana.jpg"
+          },
+          {
+            nome: "Patrícia",
+            idade: '30',
+            profissao: "Estilista",
+            foto: "../imagens/patricia.jpg"
+          },
+          {
+            nome: "Ana Júlia Torres",
+            idade: '18',
+            profissao: "Empresária",
+            foto: "../imagens/ana.jpg"
+          },
+          {
+            nome: "Letícia Mallemont",
+            idade: '22',
+            profissao: "Estudante",
+            foto: "../imagens/leticia.jpg"
+          },
+          {
+            nome: "Joana Darci",
+            idade: '23',
+            profissao: "Jornalista",
+            foto: "../imagens/joana.jpg"
+          },
+          {
+            nome: "Patrícia",
+            idade: '30',
+            profissao: "Estilista",
+            foto: "../imagens/patricia.jpg"
+          }
+        ]
       },
       {
-        nome: "Joana Darci",
-        idade: '23',
-        profissao: "Jornalista",
-        foto: "../imagens/joana.jpg"
-      },
-      {
-        nome: "Patrícia",
-        idade: '30',
-        profissao: "Estilista",
-        foto: "../imagens/patricia.jpg"
+        titulo: "Muito fiéis",
+        total: '20',
+        pessoas: [
+          {
+            nome: "Ana Júlia Torres",
+            idade: '18',
+            profissao: "Empresária",
+            foto: "../imagens/ana.jpg"
+          },
+          {
+            nome: "Letícia Mallemont",
+            idade: '22',
+            profissao: "Estudante",
+            foto: "../imagens/leticia.jpg"
+          },
+          {
+            nome: "Joana Darci",
+            idade: '23',
+            profissao: "Jornalista",
+            foto: "../imagens/joana.jpg"
+          },
+          {
+            nome: "Patrícia",
+            idade: '30',
+            profissao: "Estilista",
+            foto: "../imagens/patricia.jpg"
+          },
+          {
+            nome: "Ana Júlia Torres",
+            idade: '18',
+            profissao: "Empresária",
+            foto: "../imagens/ana.jpg"
+          },
+          {
+            nome: "Letícia Mallemont",
+            idade: '22',
+            profissao: "Estudante",
+            foto: "../imagens/leticia.jpg"
+          },
+          {
+            nome: "Joana Darci",
+            idade: '23',
+            profissao: "Jornalista",
+            foto: "../imagens/joana.jpg"
+          },
+          {
+            nome: "Patrícia",
+            idade: '30',
+            profissao: "Estilista",
+            foto: "../imagens/patricia.jpg"
+          },
+          {
+            nome: "Ana Júlia Torres",
+            idade: '18',
+            profissao: "Empresária",
+            foto: "../imagens/ana.jpg"
+          },
+          {
+            nome: "Letícia Mallemont",
+            idade: '22',
+            profissao: "Estudante",
+            foto: "../imagens/leticia.jpg"
+          },
+          {
+            nome: "Joana Darci",
+            idade: '23',
+            profissao: "Jornalista",
+            foto: "../imagens/joana.jpg"
+          },
+          {
+            nome: "Patrícia",
+            idade: '30',
+            profissao: "Estilista",
+            foto: "../imagens/patricia.jpg"
+          },
+          {
+            nome: "Ana Júlia Torres",
+            idade: '18',
+            profissao: "Empresária",
+            foto: "../imagens/ana.jpg"
+          },
+          {
+            nome: "Letícia Mallemont",
+            idade: '22',
+            profissao: "Estudante",
+            foto: "../imagens/leticia.jpg"
+          },
+          {
+            nome: "Joana Darci",
+            idade: '23',
+            profissao: "Jornalista",
+            foto: "../imagens/joana.jpg"
+          },
+          {
+            nome: "Patrícia",
+            idade: '30',
+            profissao: "Estilista",
+            foto: "../imagens/patricia.jpg"
+          }
+        ]
       }
-    ]
-  },
-  {
-    titulo: "Fiéis",
-    total: '30',
-    pessoas: [
-      {
-        nome: "Ana Júlia Torres",
-        idade: '18',
-        profissao: "Empresária",
-        foto: "../imagens/ana.jpg"
-      },
-      {
-        nome: "Letícia Mallemont",
-        idade: '22',
-        profissao: "Estudante",
-        foto: "../imagens/leticia.jpg"
-      },
-      {
-        nome: "Joana Darci",
-        idade: '23',
-        profissao: "Jornalista",
-        foto: "../imagens/joana.jpg"
-      },
-      {
-        nome: "Patrícia",
-        idade: '30',
-        profissao: "Estilista",
-        foto: "../imagens/patricia.jpg"
-      }
-    ]
-  },
-  {
-    titulo: "Muito fiéis",
-    total: '20',
-    pessoas: [
-      {
-        nome: "Ana Júlia Torres",
-        idade: '18',
-        profissao: "Empresária",
-        foto: "../imagens/ana.jpg"
-      },
-      {
-        nome: "Letícia Mallemont",
-        idade: '22',
-        profissao: "Estudante",
-        foto: "../imagens/leticia.jpg"
-      },
-      {
-        nome: "Joana Darci",
-        idade: '23',
-        profissao: "Jornalista",
-        foto: "../imagens/joana.jpg"
-      },
-      {
-        nome: "Patrícia",
-        idade: '30',
-        profissao: "Estilista",
-        foto: "../imagens/patricia.jpg"
-      }
-    ]
-  }
-];
+    ];
+
 
 
 
@@ -145,8 +364,7 @@ export default class Centro extends Component {
 
         <View style = {styles.person_line} /> 
       </View>  
-
-      );
+    );
   });
  
   return (
@@ -163,6 +381,8 @@ export default class Centro extends Component {
   var lista = this.niveis.map(function(nivel, key) {
     var ball_style = "ball" + (key+1);
     var level_style = "level" + (key+1);
+    var state = {origin: styles.hidden, button: styles.container};
+    state [level_style] = styles.container;
 
     return (
       <View style = {styles.level_container}>
@@ -171,10 +391,12 @@ export default class Centro extends Component {
            <Text style = {styles[level_style]}>{nivel.total + " " + nivel.titulo + ":"}</Text>
         </View>   
 
-        {that.listaConsumidores(nivel.pessoas)}
+        {that.listaConsumidores(nivel.pessoas.slice(-4))}
         
         <TouchableOpacity style = {styles.button}
-           onpress ={()=> {}} >
+           onPress ={()=> {
+            that.setState(state);
+          }} >
            <Text style = {styles.button_text}>MAIS</Text>
         </TouchableOpacity>
       </View>  
@@ -183,17 +405,53 @@ export default class Centro extends Component {
   });
  
   return (
-    <View style = {styles.container}>
-      <Text style = {styles.text_title}>Lista de clientes</Text>
-      <View style = {styles.line_title} />
-      {lista}
-    </View>
+    <View>  
+      <View style = {this.state.origin}>
+              <Text style = {styles.text_title}>Lista de clientes</Text>
+              <View style = {styles.line_title} />
+              {lista}
+      </View>
+      <View style = {this.state.button}>       
+      <TouchableOpacity style = {styles.back_button}
+        onPress ={() => {
+          this.setState({level1: styles.hidden, level2: styles.hidden, level3: styles.hidden, origin: styles.container, button: styles.hidden});
+        }} >
+      <Image style = {styles.back_arrow}
+        source = {require('../back_seta.jpg')}
+        resizeMode = "stretch" />
+      </TouchableOpacity>
+      </View>
+      <View style = {this.state.level1}>
+        <DetalheListagem clientes = {{nivel: 1, dados:this.niveis[0]}}/>
+      </View>
+      <View style = {this.state.level2}>
+        <DetalheListagem clientes = {{nivel: 2, dados:this.niveis[1]}}/>
+      </View>
+      <View style = {this.state.level3}>
+        <DetalheListagem clientes = {{nivel: 3, dados:this.niveis[2]}}/>
+      </View>
+    </View>  
+
   );
 }
 
 }
 
 const styles = StyleSheet.create({
+
+  back_arrow: {
+    height: 17,
+    width: 17,
+  },
+
+  back_button: {
+    marginTop: 14,
+    marginLeft: 14,
+  },
+
+  hidden: {
+    display: 'none',
+  },
  
   container: {
     backgroundColor: '#FFFFFF',

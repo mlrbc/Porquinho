@@ -8,10 +8,6 @@ import {
 import Header from './componentes/Header';
 import Centro from './componentes/Centro';
 
-
-
-
-
 export default class Listagem extends Component {
   static navigationOptions = {
     tabBarIcon: ({ tintColor }) => (
