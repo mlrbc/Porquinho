@@ -440,13 +440,17 @@ this.niveis = [
 const styles = StyleSheet.create({
 
   back_arrow: {
+    
     height: 17,
     width: 17,
+
   },
 
   back_button: {
     marginTop: 14,
     marginLeft: 14,
+    
+    
   },
 
   hidden: {
