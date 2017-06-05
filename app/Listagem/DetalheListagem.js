@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
 	},
 
 	level_container: {
-		marginTop: 27,
+		marginVertical: 20,
 		marginHorizontal: 19,
 		flex: 1
 	},
@@ -165,7 +165,7 @@ const styles = StyleSheet.create({
 	},
 
 	people: {
-		marginTop: 0,
+		marginTop: 5,
 		
 	},
 
@@ -173,7 +173,7 @@ const styles = StyleSheet.create({
 		flexDirection: 'column',
 		justifyContent: 'space-around',
 		marginTop: 10,
-		marginLeft: 10,
+		marginLeft: 1,
 		flex: 1,
 	},
 
@@ -182,7 +182,7 @@ const styles = StyleSheet.create({
 		borderRadius: 20,
 		width: 39,
 		height: 39, 
-
+		flex: 1,
 	},
 
 	person_data: {
@@ -213,7 +213,7 @@ const styles = StyleSheet.create({
 		height: 13,
 		alignSelf: 'flex-end',
 		position: 'absolute',
-		marginTop: 15,
+		marginTop: 12,
 	},
 
 	person_line: {
