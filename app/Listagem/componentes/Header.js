@@ -4,6 +4,8 @@ import {
   StyleSheet,
   Text,
   View,
+  Image,
+  TouchableOpacity,
 } from 'react-native';
 
 const window = Dimensions.get('window');
@@ -11,10 +13,16 @@ const window = Dimensions.get('window');
 export const altura_header = 70;
 
 export default class Header extends Component {
+  constructor() {
+    super();
+    this.state = {seta: style.hidden}
+  }
+
   render(){
+      const {goBack} = this.props.navigation
     return(
 
-      <View style={styles.header}>
+      <View style={styles.header}>   
         <View style={styles.headerTextBox}>
           <Text style={styles.headerText}>Porquin</Text>
           <Text style={{top: 5,fontFamily: 'System',fontWeight:'bold',fontSize: 14,lineHeight:20,color:'white'}}>LOJA</Text>
@@ -75,5 +83,13 @@ const styles = StyleSheet.create({
     color: 'white',
     alignSelf: 'center',
     textAlign: 'center',
+  },
+  seta:{
+    //display: 'none',
+    alignSelf: 'flex-end',
+    marginTop:15,
+    marginLeft:0,
+    width:30,
+    height:30
   },
 });

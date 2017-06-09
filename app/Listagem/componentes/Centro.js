@@ -447,10 +447,8 @@ const styles = StyleSheet.create({
   },
 
   back_button: {
-    marginTop: 14,
+    marginTop: 14,   
     marginLeft: 14,
-    
-    
   },
 
   hidden: {

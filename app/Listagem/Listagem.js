@@ -30,7 +30,7 @@ export default class Listagem extends Component {
 			
 			
 		  {/*Cabeçalho falta modularizar*/}
-        <Header navigate = {navigate}/>
+        <Header navigation = {this.props.navigation}/>
         {/*Centro da tela, CPF,Valor e botão registrar*/}
         <Centro/>
 
