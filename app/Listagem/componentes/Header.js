@@ -15,7 +15,7 @@ export const altura_header = 70;
 export default class Header extends Component {
   constructor() {
     super();
-    this.state = {seta: style.hidden}
+    this.state = {seta: styles.hidden};
   }
 
   render(){

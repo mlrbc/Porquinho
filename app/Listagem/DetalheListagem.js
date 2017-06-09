@@ -29,9 +29,11 @@ render() {
 			<View>
 				<View style = {styles.person_container}>
 					<View style = {styles.person_summary}>
-						<Image style = {styles.picture}
-							source = {require("./imagens/ana.jpg")}
-							resizeMode = "stretch" />
+						<View style = {styles.picture}>
+							<Image style = {styles.picture}
+								source = {require("./imagens/ana.jpg")}
+								resizeMode = "stretch" />
+						</View>
 
 						<View style = {styles.person_data}>
 							<Text style = {styles.person_name}>{person.nome}</Text>
@@ -75,12 +77,10 @@ render() {
 
 const styles = StyleSheet.create({
 	container: {
-		backgroundColor: '#FFFFFF',
 		flex: 1
 	},
 
 	text_title: {
-		marginLeft: 19,
 		opacity: 0.72,
 		color: '#000000',
 		fontFamily: 'System',
@@ -88,7 +88,8 @@ const styles = StyleSheet.create({
 		fontWeight: 'bold',
 		lineHeight: 24,
 		marginTop: 21,
-		flex: 1
+		marginHorizontal: 19,
+		flex: 1,
 	},
 
 	line_title: {
@@ -117,7 +118,7 @@ const styles = StyleSheet.create({
 		backgroundColor: '#A1A1A1',
 		borderRadius: 100,
 		width: 24,
-		height: 24, 
+		height: 24,
 		marginLeft: 7,
 	},
 
@@ -181,7 +182,7 @@ const styles = StyleSheet.create({
 		position: 'absolute',
 		borderRadius: 20,
 		width: 39,
-		height: 39, 
+		height: 39,
 		flex: 1,
 	},
 
@@ -209,6 +210,7 @@ const styles = StyleSheet.create({
 	},
 
 	details: {
+		display: 'none',
 		width: 8,
 		height: 13,
 		alignSelf: 'flex-end',
